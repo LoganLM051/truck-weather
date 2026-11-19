@@ -1,5 +1,5 @@
 // a const with a url, the url is the postman from day 2 with my cities weather.//
-const url = "https://api.open-meteo.com/v1/forecast?latitude=31.14352&longitude=-93.261&current=temperature_2m,wind_speed_10m&temperature_unit=fahrenheit";
+const url = "https://api.open-meteo.com/v1/forecast?latitude=31.14352&longitude=-93.261&timezone=auto&current=temperature_2m,wind_speed_10m&wind_speed_unit=mph&temperature_unit=fahrenheit";
 // a const for the button, that gets clicked to run getWeather button event listener//
 const button = document.getElementById("check-btn");
 // a const to get the weather after clicking the button// 
@@ -23,7 +23,7 @@ async function getWeather() {
 
     const time = document.createElement("p");
     time.className = "fs-4";
-    time.textContent = "Time: " + new Date(data.current.time).toLocaleString(); 
+    time.textContent = "Time: " + new Date(data.current.time).toLocaleString(); + " "
     localWeather.appendChild(time);
 }
 // button event listener that gets the weather from the url//
